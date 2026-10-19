@@ -5,7 +5,7 @@ This project uses NPN and PNP transistors to build all standard logic gates: AND
 
 ## Transistor schematics
 
-The first set of designs uses NPN 2N3904 transistors in 5 V resistor-transistor logic (RTL). PNP variants are not included yet. Each gate folder contains an SVG schematic, a parts list, and a truth table.
+Every gate schematic uses both NPN 2N3904 and PNP 2N3906 transistors in complementary BJT stages powered by 3.3 V. Each gate folder contains an SVG schematic, a parts list, and a truth table.
 
 - [AND](AND/README.md)
 - [OR](OR/README.md)

@@ -1,15 +1,17 @@
 # NOT Gate
 
-![NOT transistor schematic](schematic.svg)
+![NOT NPN and PNP transistor schematic](schematic.svg)
 
-This design uses NPN 2N3904 transistors and resistor-transistor logic (RTL). Each stage is a NOR gate; a single-input stage is an inverter. Matching net labels connect the stages. PNP transistors are not needed for this implementation.
+This design uses **both NPN 2N3904 and PNP 2N3906 transistors** at a 3.3 V supply. Each stage is a complementary BJT NOR gate: series PNP transistors pull the output high when every input is LOW, and parallel NPN transistors pull it low when any input is HIGH. A single-input stage is an inverter.
+
+Matching net labels connect the stages. Each input net connects to the separately resistored NPN and PNP bases bearing that label. No collector pull-up resistors are used.
 
 ## Parts
 
 - 1 × 2N3904 NPN transistors
-- 1 × 4.7 kΩ collector pull-up resistors
-- 1 × 22 kΩ base resistors
-- Regulated 5 V supply with a common ground
+- 1 × 2N3906 PNP transistors
+- 2 × 10 kΩ base resistors (one per transistor)
+- Regulated 3.3 V supply with a common ground
 
 ## Truth table
 
@@ -20,6 +22,8 @@ This design uses NPN 2N3904 transistors and resistor-transistor logic (RTL). Eac
 
 ## Wiring and verification
 
-Connect matching net labels together and all grounds to the supply negative. Drive each input to 0 V or +5 V; never leave inputs floating. Check the manufacturer's transistor pinout. Measure Y with a high-impedance probe; a directly connected LED or heavy load changes the logic levels.
+Connect matching net labels and all grounds to the supply negative. Drive external inputs to 0 V or +3.3 V; never leave them floating. Check each manufacturer's transistor pinout. Use a high-impedance probe at Y; do not connect an LED or heavy load directly.
 
-The Boolean stage connections have been checked against this truth table. These are conceptual schematics, not electrically simulated or hardware-tested circuits. Before building, simulate DC levels, fan-out, and switching behavior; RTL HIGH levels depend on loading.
+The 3.3 V supply limits reverse base-emitter stress in the series PNP network. These are complementary **bipolar** stages, not CMOS: they consume base current and may conduct through both networks during input transitions. Loading, accumulated saturation voltage drops, input thresholds, and switching current must be checked in simulation before hardware use.
+
+The Boolean stage connections pass the truth table above. Electrical simulation and hardware testing have not been performed; these are conceptual schematics, not validated construction plans.
