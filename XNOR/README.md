@@ -1,4 +1,5 @@
-# XNOR Gate
+# XNOR Gate Using NPN and PNP Transistors
+This XNOR gate requires **8 × NPN (2N3904)** and **8 × PNP (2N3906)**. Both transistor types are used in the schematic below.
 
 ![XNOR NPN and PNP transistor schematic](schematic.svg)
 

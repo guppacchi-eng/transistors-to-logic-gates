@@ -1,4 +1,5 @@
-# OR Gate
+# OR Gate Using NPN and PNP Transistors
+This OR gate requires **3 × NPN (2N3904)** and **3 × PNP (2N3906)**. Both transistor types are used in the schematic below.
 
 ![OR NPN and PNP transistor schematic](schematic.svg)
 

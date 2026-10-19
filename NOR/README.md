@@ -1,4 +1,5 @@
-# NOR Gate
+# NOR Gate Using NPN and PNP Transistors
+This NOR gate requires **2 × NPN (2N3904)** and **2 × PNP (2N3906)**. Both transistor types are used in the schematic below.
 
 ![NOR NPN and PNP transistor schematic](schematic.svg)
 

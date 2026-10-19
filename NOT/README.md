@@ -1,4 +1,5 @@
-# NOT Gate
+# NOT Gate Using NPN and PNP Transistors
+This NOT gate requires **1 × NPN (2N3904)** and **1 × PNP (2N3906)**. Both transistor types are used in the schematic below.
 
 ![NOT NPN and PNP transistor schematic](schematic.svg)
 
@@ -8,8 +9,8 @@ Matching net labels connect the stages. Each input net connects to the separatel
 
 ## Parts
 
-- 1 × 2N3904 NPN transistors
-- 1 × 2N3906 PNP transistors
+- 1 × 2N3904 NPN transistor
+- 1 × 2N3906 PNP transistor
 - 2 × 10 kΩ base resistors (one per transistor)
 - Regulated 3.3 V supply with a common ground
 
